@@ -1,5 +1,10 @@
 package io.jack.mvn.studycase.account.vo;
 
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+import 
+
 public class Account {
     private String id;
     private String name;
@@ -76,5 +81,9 @@ public class Account {
     public Account setActivated(boolean activated) {
         this.activated = activated;
         return this;
+    }
+    
+    public String toString() {
+        return ReflectionToStringBuilder.toString(this, ToStringStyle.JSON_STYLE);
     }
 }

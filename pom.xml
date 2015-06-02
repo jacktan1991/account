@@ -19,6 +19,7 @@
     <account.version>1.0.0-SNAPSHOT</account.version>
     <junit.version>4.7</junit.version>
     <spring.version>2.5.6</spring.version>
+    <commons.version>3.4</commons.version>
   </properties>
 
   <dependencyManagement>
@@ -48,6 +49,11 @@
         <groupId>org.springframework</groupId>
         <artifactId>spring-context-support</artifactId>
         <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>${commons.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
