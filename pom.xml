@@ -20,6 +20,8 @@
     <junit.version>4.7</junit.version>
     <spring.version>2.5.6</spring.version>
     <commons.version>3.4</commons.version>
+    <cobertura.version>2.7</cobertura.version>
+    <coveralls.version>3.1.0</coveralls.version>
   </properties>
 
   <dependencyManagement>
@@ -80,4 +82,34 @@
     </pluginManagement>
   </build>
 
+  <profiles>
+    <profile>
+      <id>travis</id>
+      <activation>
+        <property>
+          <name>env.TRAVIS</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>cobertura-maven-plugin</artifactId>
+            <version>${cobertura.version}</version>
+            <configuration>
+              <formats>
+                <format>xml</format>
+              </formats>
+            </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.eluder.coveralls</groupId>
+            <artifactId>coveralls-maven-plugin</artifactId>
+            <version>${coveralls.version}</version>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
