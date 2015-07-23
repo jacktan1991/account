@@ -1,5 +1,7 @@
 # Maven
 target/
+*/target/
+**/target/*
 
 # Eclipse
 .settings/
@@ -8,4 +10,6 @@ target/
 
 # IDEA
 .idea/
-.iml
+*.iml
+.iws
+.ipr
